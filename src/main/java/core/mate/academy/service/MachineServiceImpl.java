@@ -47,6 +47,14 @@ public class MachineServiceImpl implements MachineService<Machine> {
 
     @Override
     public void startWorking(List<? extends Machine> machines) {
-
+        for (Machine machine : machines) {
+            if (machine.getClass() == Bulldozer.class) {
+                new Bulldozer().doWork();
+            } else if (machine.getClass() == Excavator.class) {
+                new Excavator().doWork();
+            } else if (machine.getClass() == Truck.class) {
+                new Truck().doWork();
+            }
+        }
     }
 }
