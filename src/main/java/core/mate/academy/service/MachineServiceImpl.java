@@ -9,7 +9,6 @@ import core.mate.academy.service.impl.ExcavatorProducer;
 import core.mate.academy.service.impl.TruckProducer;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.ListIterator;
 
@@ -35,11 +34,12 @@ public class MachineServiceImpl implements MachineService<Machine> {
         int size = machines.size();
 
         if (size < 25) {
-            for (int i=0; i<size; i++)
+            for (int i = 0; i < size; i++) {
                 machines.set(i, value);
+            }
         } else {
             ListIterator<? super Machine> itr = machines.listIterator();
-            for (int i=0; i<size; i++) {
+            for (int i = 0; i < size; i++) {
                 itr.next();
                 itr.set(value);
             }
